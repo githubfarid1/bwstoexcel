@@ -85,4 +85,4 @@ for sheet in xlbook.sheets:
 
 xlbook.save(os.path.join(settings.SAVE_LOCATION, settings.FILENAME))
 xlbook.close()
-print("Done")
+input("Done")
