@@ -81,7 +81,8 @@ for sheet in xlbook.sheets:
     cells.api.HorizontalAlignment = HAlign.xlHAlignCenter
     cells = sheet.range('G7', 'J{}'.format(i))
     cells.api.HorizontalAlignment = HAlign.xlHAlignCenter
-    xlsheet.save(os.path.join(settings.SAVE_LOCATION, settings.FILENAME))
     print("Success")
-xlsheet.close()
+
+xlbook.save(os.path.join(settings.SAVE_LOCATION, settings.FILENAME))
+xlbook.close()
 print("Done")
