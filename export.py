@@ -5,7 +5,7 @@ from dbclass import Doc, Department, Bundle, Base
 import xlwings as xw
 from xlwings.constants import LineStyle, Background, RgbColor, VAlign, HAlign
 import sys
-import settings
+# import settings
 
 xlbook = xw.Book()
 xlsheet = xlbook.sheets[0]
@@ -69,9 +69,9 @@ for sheet in xlbook.sheets:
             sheet['{}{}'.format('F', i)].value = res.description
             sheet['{}{}'.format('H', i)].value = res.doc_count
         if res.filesize is not None:
-            filelocation = os.path.join(settings.APP_NAME, res.Bundle.Department.link, str(res.Bundle.box_number), str(res.doc_number) + ".pdf")
-            sheet['{}{}'.format('F', i)].color = RgbColor.rgbLightGreen
-            sheet['{}{}'.format('J', i)].color = RgbColor.rgbLightGreen
+            filelocation = os.path.join(APP_NAME, res.Bundle.Department.link, str(res.Bundle.box_number), str(res.doc_number) + ".pdf")
+            sheet['{}{}'.format('F', i)].color = RgbColor.rgbLightSkyBlue
+            sheet['{}{}'.format('J', i)].color = RgbColor.rgbLightSkyBlue
             sheet['{}{}'.format('J', i)].value = '=HYPERLINK(CONCATENATE(setting!A1, "{}")'.format(filelocation) + ', "LIHAT")'
         i += 1
     cells = sheet.range('A7', 'J{}'.format(i))
@@ -83,6 +83,6 @@ for sheet in xlbook.sheets:
     cells.api.HorizontalAlignment = HAlign.xlHAlignCenter
     print("Success")
 
-xlbook.save(os.path.join(settings.SAVE_LOCATION, settings.FILENAME))
+xlbook.save(os.path.join(SAVE_LOCATION, FILENAME))
 xlbook.close()
 input("Done")
