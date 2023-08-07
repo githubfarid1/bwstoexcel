@@ -3,7 +3,7 @@ from settings import *
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, sessionmaker
 from dbclass import Doc, Department, Bundle, Base
-from pathlib import Path
+# from pathlib import Path
 
 
 engine = create_engine('mysql+pymysql://{}:{}@localhost:{}/{}'.format(USER, PASSWORD, PORT, DBNAME) , echo=False)
