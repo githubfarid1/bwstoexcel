@@ -34,16 +34,4 @@ for res in deps:
             print(text, "created")
     
     
-    break
-# print(boxnumbers)
-    # boxfolder = os.path.join(STARTFOLDER, "{}-box-{}".format(res.Bundle.Department.link, res.Bundle.box_number))
-    # isExist = os.path.exists(boxfolder)
-    # if not isExist:
-    #     os.mkdir(boxfolder)
-
-    # docnumberfolder = os.path.join(boxfolder, str(res.doc_number))
-    # try:
-    #     os.mkdir(docnumberfolder)
-    #     print(docnumberfolder, "created")
-    # except:
-    #     pass
+    # break
